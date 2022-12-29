@@ -5,6 +5,12 @@ const fs = require("fs");
 const db = require("./db/db.json");
 const path = require("path");
 const notes = require("./db/db.json");
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
+
 
 app.use(bodyParser.json());
 
@@ -17,9 +23,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // app.use(express.static(path.join(__dirname,"./public")));
 
-app.listen(3000, () => {
-    console.log('Server is listening on port 3000');
-  });
 
   
   app.get('/api/notes', (req, res) => {
