@@ -65,7 +65,7 @@ const renderActiveNote = () => {
     noteText.value = '';
   }
 };
-var id = 0
+var id = 100
 
 const handleNoteSave = () => {
   id++;
