@@ -31,15 +31,7 @@ app.listen(3000, () => {
     });
   });
   
-  app.get('/api/notes/:id', (req, res) => {
-    // read the notes from the JSON file
-    fs.readFile('db/db.json', (err, data) => {
-      if (err) throw err;
-        const notes = JSON.parse(data);
-        res.send(notes);
-    });
-  });
-  
+
 
   app.post('/api/notes', (req, res) => {
     fs.readFile('db/db.json', (err, data) => {
